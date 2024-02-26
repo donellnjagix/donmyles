@@ -12,7 +12,7 @@ const LoadingActivities = () => {
   const [quantityCondition, setQuantityCondition] = useState('');
   const [picture, setPicture] = useState<File | null>(null);
   const [pictureDescription, setPictureDescription] = useState('');
-  const [signatureRef, setSignatureRef] = useState(null); // Reference to SignatureCanvas component
+  const [signatureRef, setSignatureRef] = useState<SignatureCanvas | null>(null); // Explicitly typed
 
   // Function to handle form submission
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -43,10 +43,6 @@ const LoadingActivities = () => {
       <h2>Loading Activities</h2>
       <form onSubmit={handleSubmit}>
         {/* Form fields */}
-        <div>
-          <label>Commodity Description:</label>
-          <input type="text" value={commodityDescription} onChange={(e) => setCommodityDescription(e.target.value)} />
-        </div>
         {/* Add other form fields here */}
         <div>
           <label>Area of Loading:</label>
@@ -104,5 +100,3 @@ const LoadingActivities = () => {
 };
 
 export default LoadingActivities;
-
-      
